@@ -20,3 +20,23 @@ class Notes(models.Model):
 
     def __str__(self):
         return f"{self.title}, {self.author_id} on {self.created_at}"
+
+class owner(models.Model):
+    id = fields.IntField(pk=True)
+    document_type = fields.CharField(max_length=50)
+    full_name = fields.CharField(max_length=50, null=True)
+    address = fields.CharField(max_length=50, null=True)
+    phone = fields.CharField(max_length=50, null=True)
+    email = fields.CharField(max_length=255, null=True)
+    created_at = fields.DatetimeField(auto_now_add=True)
+    modified_at = fields.DatetimeField(auto_now=True)
+
+class vehicles(models.Model):
+    plate = fields.CharField(max_length=50, pk=True)
+    brand = fields.CharField(max_length=50, null=True)
+    model = fields.CharField(max_length=50, null=True)
+    year = fields.IntField(null=True)
+    color = fields.CharField(max_length=50, null=True)
+    owner = fields.ForeignKeyField('models.owner')
+    created_at = fields.DatetimeField(auto_now_add=True)
+    modified_at = fields.DatetimeField(auto_now=True)

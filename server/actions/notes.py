@@ -3,7 +3,7 @@ from tortoise.exceptions import DoesNotExist
 
 from database.models import Notes
 from schemas.notes import NoteOutSchema
-from schemas.token import Status  # NEW
+from schemas.token import Status
 
 
 async def get_notes():
