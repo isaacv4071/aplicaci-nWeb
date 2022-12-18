@@ -33,7 +33,7 @@ async def update_owner(document_id, owner_update) -> OwnerOutSchema:
     raise HTTPException(status_code=403, detail=f"Not authorized to update")
 
 
-async def delete_owner(document_id) -> Status:  # UPDATED
+async def delete_owner(document_id) -> Status:
     try:
         db_note = await OwnerOutSchema.from_queryset_single(owner.get(id=document_id))
     except DoesNotExist:
@@ -43,6 +43,6 @@ async def delete_owner(document_id) -> Status:  # UPDATED
         deleted_count = await owner.filter(id=document_id).delete()
         if not deleted_count:
             raise HTTPException(status_code=404, detail=f"Owner {document_id} not found")
-        return Status(message=f"Deleted note {document_id}")  # UPDATED
+        return Status(message=f"Deleted owner {document_id}")
 
     raise HTTPException(status_code=403, detail=f"Not authorized to delete")

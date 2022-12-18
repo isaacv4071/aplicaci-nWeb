@@ -5,7 +5,7 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 
 from database.models import owner
 
-OwnerOutSchema = pydantic_model_creator(owner, name='Owner',exclude=["created_at","modified_at","vehicless"])
+OwnerOutSchema = pydantic_model_creator(owner, name='Owner',exclude=["created_at","modified_at"])
 
 OwnerInSchema = pydantic_model_creator(owner,name='OwnerIn',exclude=["created_at","modified_at","vehicless"])
 

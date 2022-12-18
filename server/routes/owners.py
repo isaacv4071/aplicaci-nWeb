@@ -34,7 +34,7 @@ async def get_owner(document_id: int) -> OwnerOutSchema:
     except DoesNotExist:
         raise HTTPException(
             status_code=404,
-            detail="Note does not exist",
+            detail="Owner does not exist",
         )
 
 
