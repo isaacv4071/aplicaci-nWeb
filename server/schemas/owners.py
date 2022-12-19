@@ -10,7 +10,6 @@ OwnerOutSchema = pydantic_model_creator(owner, name='Owner',exclude=["created_at
 OwnerInSchema = pydantic_model_creator(owner,name='OwnerIn',exclude=["created_at","modified_at","vehicless"])
 
 class UpdateOwner(BaseModel):
-    id: Optional[int]
     document_type: Optional[str]
     full_name: Optional[str]
     address: Optional[str]

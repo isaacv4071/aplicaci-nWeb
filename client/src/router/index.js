@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import RegisterView from '@/views/RegisterView.vue'
-import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/users/RegisterView.vue'
+import LoginView from '@/views/users/LoginView.vue'
 import DashboardView from '@/views/DashboardView.vue'
-import ProfileView from '@/views/ProfileView.vue'
+import ProfileView from '@/views/users/ProfileView.vue'
 import NoteView from '@/views/NoteView.vue'
 import EditNoteView from '@/views/EditNoteView.vue'
+import OwnersView from '@/views/owners/OwnersView.vue'
+import OwnerView from '@/views/owners/OwnerView.vue'
+import EditOwnerView from '@/views/owners/EditOwnerView.vue'
 import store from '@/store'
 
 const routes = [
@@ -28,7 +31,29 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardView,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    children: [
+      {
+        name: 'Owners',
+        path: '/dashboard/owners',
+        component: OwnersView,
+        meta: { requiresAuth: true }
+      },
+      {
+        name: 'Owner',
+        path: '/dashboard/owner/:id',
+        component: OwnerView,
+        meta: { requiresAuth: true },
+        props: true
+      },
+      {
+        name: 'OwnerEdit',
+        path: '/dashboard/edit/owner/:id',
+        component: EditOwnerView,
+        meta: { requiresAuth: true },
+        props: true
+      }
+    ]
   },
   {
     path: '/profile',

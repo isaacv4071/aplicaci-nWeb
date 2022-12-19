@@ -28,7 +28,7 @@ export default defineComponent({
   props: ['id'],
   async created () {
     try {
-      await this.viewNote(this.id)
+      await this.viewNote(parseInt(this.id))
     } catch (error) {
       console.error(error)
       this.$router.push('/dashboard')

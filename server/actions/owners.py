@@ -27,7 +27,7 @@ async def update_owner(document_id, owner_update) -> OwnerOutSchema:
         raise HTTPException(status_code=404, detail=f"Owner {document_id} not found")
 
     if db_note.id == document_id:
-        await owner.filter(id=document_id).update(**owner_update.dict(exclude_unset=True))
+        await owner.filter(id=document_id).update(**owner_update.dict())
         return await OwnerOutSchema.from_queryset_single(owner.get(id=document_id))
 
     raise HTTPException(status_code=403, detail=f"Not authorized to update")
