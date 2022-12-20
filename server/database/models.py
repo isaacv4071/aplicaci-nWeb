@@ -9,18 +9,6 @@ class Users(models.Model):
     created_at = fields.DatetimeField(auto_now_add=True)
     modified_at = fields.DatetimeField(auto_now=True)
 
-
-class Notes(models.Model):
-    id = fields.IntField(pk=True)
-    title = fields.CharField(max_length=225)
-    content = fields.TextField()
-    author = fields.ForeignKeyField("models.Users", related_name="note")
-    created_at = fields.DatetimeField(auto_now_add=True)
-    modified_at = fields.DatetimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.title}, {self.author_id} on {self.created_at}"
-
 class owner(models.Model):
     id = fields.IntField(pk=True)
     document_type = fields.CharField(max_length=50)
@@ -32,7 +20,8 @@ class owner(models.Model):
     modified_at = fields.DatetimeField(auto_now=True)
 
 class vehicles(models.Model):
-    plate = fields.CharField(max_length=50, pk=True)
+    id = fields.IntField(pk=True)
+    plate = fields.CharField(max_length=50)
     brand = fields.CharField(max_length=50, null=True)
     model = fields.CharField(max_length=50, null=True)
     year = fields.IntField(null=True)

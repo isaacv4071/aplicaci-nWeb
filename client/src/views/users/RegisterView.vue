@@ -4,10 +4,10 @@
     class="card text-center position-absolute top-50 start-50 translate-middle"
   >
     <div class="card-body">
-      <h3>Register</h3>
+      <h3>Registro</h3>
       <form @submit.prevent="submit">
         <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
+          <label for="username" class="form-label">Nombre de Usuario</label>
           <input
             type="text"
             name="username"
@@ -17,7 +17,7 @@
           />
         </div>
         <div class="mb-3">
-          <label for="full_name" class="form-label">Full Name</label>
+          <label for="full_name" class="form-label">Nombre Completo</label>
           <input
             type="text"
             name="full_name"
@@ -27,7 +27,7 @@
           />
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label">Contraseña</label>
           <input
             type="password"
             name="password"
@@ -36,7 +36,7 @@
             required
           />
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Registro</button>
       </form>
     </div>
   </div>

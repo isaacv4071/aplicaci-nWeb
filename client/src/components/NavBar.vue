@@ -27,11 +27,11 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/profile"
-                >My Profile</router-link
+                >Mi perfil</router-link
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click="logout">Log Out</a>
+              <a class="nav-link" @click="logout">Cerrar sesión</a>
             </li>
           </ul>
           <ul v-else class="navbar-nav me-auto">
@@ -40,11 +40,11 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/register"
-                >Register</router-link
+                >Registro</router-link
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/login">Log In</router-link>
+              <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
             </li>
           </ul>
         </div>

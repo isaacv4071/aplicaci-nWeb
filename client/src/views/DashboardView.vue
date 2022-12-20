@@ -4,7 +4,9 @@
     <router-link class="btn btn-primary" to="/dashboard/owners"
       >Propietarios</router-link
     >
-    <router-link class="btn btn-primary" to="#">Vehículos</router-link>
+    <router-link class="btn btn-primary" to="/dashboard/vehicles"
+      >Vehículos</router-link
+    >
   </div>
   <div class="container"><router-view /></div>
 </template>

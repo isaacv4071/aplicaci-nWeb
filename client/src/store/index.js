@@ -1,13 +1,13 @@
 import { createStore } from 'vuex'
 
-import notes from './modules/notes'
 import users from './modules/user'
 import owners from './modules/owners'
+import vehicles from './modules/vehicles'
 
 export default createStore({
   modules: {
-    notes,
     users,
-    owners
+    owners,
+    vehicles
   }
 })

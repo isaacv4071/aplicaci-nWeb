@@ -9,7 +9,7 @@ VehiclesOutSchema = pydantic_model_creator(
     vehicles, name='Vehicles', exclude=["created_at", "modified_at"])
 
 VehiclesInSchema = pydantic_model_creator(
-    vehicles, name='VehiclesIn', exclude=["owner","created_at", "modified_at"])
+    vehicles, name='VehiclesIn', exclude=["id","owner","created_at", "modified_at"])
 
 class UpdateVehicles(BaseModel):
     plate: Optional[str]

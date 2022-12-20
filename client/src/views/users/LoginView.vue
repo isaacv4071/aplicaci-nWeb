@@ -13,7 +13,7 @@
             name="username"
             v-model="form.username"
             class="form-control"
-            placeholder="Username"
+            placeholder="Usuario"
             required
           />
         </div>
@@ -23,11 +23,11 @@
             name="password"
             v-model="form.password"
             class="form-control"
-            placeholder="Password"
+            placeholder="Contraseña"
             required
           />
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Iniciar sesión</button>
       </form>
     </div>
   </div>

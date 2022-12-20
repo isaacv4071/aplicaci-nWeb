@@ -4,11 +4,12 @@ import RegisterView from '@/views/users/RegisterView.vue'
 import LoginView from '@/views/users/LoginView.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import ProfileView from '@/views/users/ProfileView.vue'
-import NoteView from '@/views/NoteView.vue'
-import EditNoteView from '@/views/EditNoteView.vue'
 import OwnersView from '@/views/owners/OwnersView.vue'
 import OwnerView from '@/views/owners/OwnerView.vue'
 import EditOwnerView from '@/views/owners/EditOwnerView.vue'
+import EditVehicleView from '@/views/vehicles/EditVehicleView.vue'
+import VehicleView from '@/views/vehicles/VehicleView.vue'
+import VehiclesView from '@/views/vehicles/VehiclesView.vue'
 import store from '@/store'
 
 const routes = [
@@ -52,6 +53,26 @@ const routes = [
         component: EditOwnerView,
         meta: { requiresAuth: true },
         props: true
+      },
+      {
+        name: 'Vehicles',
+        path: '/dashboard/vehicles',
+        component: VehiclesView,
+        meta: { requiresAuth: true }
+      },
+      {
+        name: 'Vehicle',
+        path: '/dashboard/vehicle/:id',
+        component: VehicleView,
+        meta: { requiresAuth: true },
+        props: true
+      },
+      {
+        name: 'VehicleEdit',
+        path: '/dashboard/edit/vehicle/:id',
+        component: EditVehicleView,
+        meta: { requiresAuth: true },
+        props: true
       }
     ]
   },
@@ -60,20 +81,6 @@ const routes = [
     name: 'Profile',
     component: ProfileView,
     meta: { requiresAuth: true }
-  },
-  {
-    path: '/note/:id',
-    name: 'Note',
-    component: NoteView,
-    meta: { requiresAuth: true },
-    props: true
-  },
-  {
-    path: '/editnote/:id',
-    name: 'EditNote',
-    component: EditNoteView,
-    meta: { requiresAuth: true },
-    props: true
   }
 ]
 

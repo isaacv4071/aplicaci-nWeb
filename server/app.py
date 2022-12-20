@@ -8,7 +8,7 @@ from database.config import TORTOISE_ORM
 
 # enable schemas to read relationship between models
 Tortoise.init_models(["database.models"], "models")
-from routes import users, notes, owners, vehicles
+from routes import users, owners, vehicles
 
 app = FastAPI()
 
@@ -20,7 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(users.router)
-app.include_router(notes.router)
 app.include_router(owners.router)
 app.include_router(vehicles.router)
 

@@ -1,18 +1,18 @@
 <template>
   <section>
-    <h1>Your Profile</h1>
+    <h1>Tú Perfil</h1>
     <hr />
     <br />
     <div>
       <p>
-        <strong>Full Name:</strong> <span>{{ user.full_name }}</span>
+        <strong>Nombre Completo:</strong> <span>{{ user.full_name }}</span>
       </p>
       <p>
-        <strong>Username:</strong> <span>{{ user.username }}</span>
+        <strong>Nombre de Usuario:</strong> <span>{{ user.username }}</span>
       </p>
       <p>
         <button @click="deleteAccount()" class="btn btn-primary">
-          Delete Account
+          Eliminar Cuenta
         </button>
       </p>
     </div>
