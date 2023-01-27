@@ -7,6 +7,7 @@
       <h5>VYP</h5>
       <i class="bi bi-person-circle" id="logo"></i>
       <form @submit.prevent="submit">
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
         <div class="mb-3">
           <input
             type="text"
@@ -44,7 +45,8 @@ export default defineComponent({
       form: {
         username: '',
         password: ''
-      }
+      },
+      error: null
     }
   },
   methods: {
@@ -53,8 +55,12 @@ export default defineComponent({
       const User = new FormData()
       User.append('username', this.form.username)
       User.append('password', this.form.password)
-      await this.logIn(User)
-      this.$router.push('/dashboard')
+      try {
+        await this.logIn(User)
+        this.$router.push('/dashboard')
+      } catch (error) {
+        this.error = 'usuario o contraseña invalido'
+      }
     }
   }
 })

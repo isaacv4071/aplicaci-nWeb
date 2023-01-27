@@ -14,7 +14,7 @@ const app = createApp(App)
 axios.defaults.withCredentials = true
 axios.defaults.baseURL = 'http://localhost:8000/' // the FastAPI backend
 
-axios.interceptors.response.use(undefined, function (error) {
+/* axios.interceptors.response.use(undefined, function (error) {
   if (error) {
     const originalRequest = error.config
     if (error.response.status === 401 && !originalRequest._retry) {
@@ -23,7 +23,7 @@ axios.interceptors.response.use(undefined, function (error) {
       return router.push('/login')
     }
   }
-})
+}) */
 
 const token = localStorage.getItem('user')
 if (token) {
