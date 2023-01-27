@@ -40,7 +40,27 @@
     </table>
   </div>
   <div v-else>
-    <p>No hay nada que ver. Vuelve más tarde.</p>
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col"># de Placa</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">
+            <button
+              type="button"
+              class="btn btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Agregar vehiculo
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </div>
 
   <!-- Modal -->

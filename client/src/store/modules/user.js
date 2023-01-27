@@ -23,6 +23,7 @@ const actions = {
   },
   async viewMe ({ commit }) {
     const { data } = await axios.get('users/whoami')
+    localStorage.setItem('user', data.id)
     await commit('setUser', data)
   },
   // eslint-disable-next-line no-empty-pattern
@@ -30,8 +31,10 @@ const actions = {
     await axios.delete(`user/${id}`)
   },
   async logOut ({ commit }) {
+    localStorage.removeItem('user')
     const user = null
     commit('logout', user)
+    await axios.delete('logout')
   }
 }
 

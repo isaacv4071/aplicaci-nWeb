@@ -3,7 +3,7 @@
     <div class="card-header">Inventario VYP</div>
     <div class="card-body">
       <p class="card-text">
-        Web sencilla que permita llevar el inventario de un grupo de vehículos y
+        Web sencilla que permite llevar el inventario de un grupo de vehículos y
         sus propietarios.
       </p>
       <h5 v-if="isLoggedIn" class="card-title">Bienvenid@</h5>

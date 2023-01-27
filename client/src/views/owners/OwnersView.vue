@@ -38,7 +38,27 @@
     </table>
   </div>
   <div v-else>
-    <p>No hay nada que ver. Vuelve más tarde.</p>
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">Documento</th>
+          <th scope="col">Tipo de Doc.</th>
+          <th scope="col">Nombre Completo</th>
+          <th scope="col">
+            <button
+              type="button"
+              class="btn btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Agregar Propietario
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </div>
 
   <!-- Modal -->

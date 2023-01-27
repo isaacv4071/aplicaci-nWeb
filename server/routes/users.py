@@ -75,3 +75,9 @@ async def delete_user(
     user_id: int, current_user: UserOutSchema = Depends(get_current_user)
 ) -> Status:
     return await crud.delete_user(user_id, current_user)
+
+@router.delete("/logout", dependencies=[Depends(get_current_user)])
+async def logout():
+    response = JSONResponse(content={"message": "Successfully logged out"})
+    response.delete_cookie("Authorization")
+    return response

@@ -25,6 +25,11 @@ axios.interceptors.response.use(undefined, function (error) {
   }
 })
 
+const token = localStorage.getItem('user')
+if (token) {
+  store.dispatch('viewMe')
+}
+
 app.use(router)
 app.use(store)
 app.mount('#app')
